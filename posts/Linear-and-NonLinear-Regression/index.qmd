@@ -268,4 +268,4 @@ print(f'R-squared: {lasso_r2}')
 
 Polynomial regression with Ridge and Lasso regularization on the California Housing dataset has unveiled the intricate patterns hidden within the data. As we navigate the landscapes of non-linear regression, we discover the delicate balance between model flexibility and regularization.
 
-References have been taken from various sourc es on the Internet.
+References have been taken from various sources on the Internet.

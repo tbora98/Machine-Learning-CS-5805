@@ -1,5 +1,5 @@
 ---
-title: "Probability Theory and Randon Variables Blog"
+title: "Probability Theory and Random Variables Blog"
 author: "Trisha Bora"
 date: "2023-12-06"
 categories: [Probability_Random Variables]
@@ -91,4 +91,4 @@ plt.show()
 # Conclusion:
 Probability theory and random variables aren't mere theoretical constructs but guiding stars illuminating the path to machine learning insights. Through the lens of the Wine dataset, we've navigated the seas of normality, conditional probability, and the harmonious central limit theorem. Armed with this understanding, machine learning practitioners can craft more informed models and make data-driven decisions.
 
-References have been taken from various sourc es on the Internet.
+References have been taken from various sources on the Internet.

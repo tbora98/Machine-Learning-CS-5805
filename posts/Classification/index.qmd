@@ -39,7 +39,7 @@ Data Preprocessing
 Feature Selection: Limiting the analysis to the first two features for visualization purposes.
 
 Standardization: Scaling the features to a common range for improved visualization.
-```{python}
+``` {python}
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_wine
@@ -56,6 +56,7 @@ y = wine.target
 scaler = StandardScaler()
 X_std = scaler.fit_transform(X)
 ```
+
 
 At the heart of classification algorithms lies KNN, a method both simplistic and powerful. The essence of KNN lies in its ability to make predictions based on the majority class among the k-nearest neighbors. It is a non-parametric, lazy learning algorithm, meaning it makes predictions at runtime rather than during training.
 
