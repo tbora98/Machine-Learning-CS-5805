@@ -1,0 +1,105 @@
+---
+title: "Anomaly Detection Blog"
+author: "Trisha Bora"
+date: "2023-12-06"
+categories: [ Anomaly Detection]
+image: "image.jpg"
+
+---
+# Title: Anomaly Detection:
+Anomaly detection, a critical facet across various domains, serves as a robust mechanism for identifying irregular patterns or data points. Its fundamental principle involves establishing a norm and categorizing deviations as anomalies. These anomalies can manifest as point anomalies, contextual anomalies linked to specific conditions, or collective anomalies within a set of related data points. Techniques for anomaly detection span statistical methods like Z-score and Gaussian distribution, machine learning approaches such as Isolation Forest and Autoencoders, and the utilization of deep learning neural networks.
+# Data Preprocessing
+The Wine dataset, a classic dataset often used for machine learning exploration, consists of various chemical attributes of wines. Leveraging Isolation Forest, a tree-based anomaly detection algorithm, we aim to highlight instances that deviate significantly from the norm. To get started, we load the Wine dataset and preprocess the data. Standardization and dimensionality reduction using Principal Component Analysis (PCA) set the stage for more effective anomaly detection.
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.ensemble import IsolationForest
+from sklearn.preprocessing import StandardScaler
+from sklearn.datasets import load_wine
+
+# Load the Wine dataset
+wine = load_wine()
+X = wine.data
+y = wine.target
+
+# Standardize the data
+scaler = StandardScaler()
+X_std = scaler.fit_transform(X)
+
+# Apply PCA for dimensionality reduction
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_std)
+```
+# Isolation Forest:
+Isolation Forest works by isolating anomalies through recursive partitioning. The algorithm assigns anomaly scores to each data point, representing their likelihood of being an outlier. We fit the Isolation Forest model and obtain anomaly scores for the Wine dataset.
+```{python}
+# Fit the Isolation Forest model
+model = IsolationForest(contamination=0.05, random_state=42)
+y_pred = model.fit_predict(X_std)
+anomaly_scores = model.decision_function(X_std)
+```
+# Visualization:
+Visualization is key to understanding the algorithm's findings. In our case, we use a scatter plot with the first principal component on the x-axis, anomaly scores on the y-axis, and connections between points. Anomalies are highlighted in red.
+```{python}
+# Create a scatter plot with lines connecting the points
+plt.figure(figsize=(12, 6))
+
+# Plot the values along the first principal component
+plt.scatter(range(len(X_pca)), X_pca[:, 0], label='Data', c=anomaly_scores, cmap='viridis', alpha=0.7)
+
+# Connect the points with lines
+plt.plot(range(len(X_pca)), X_pca[:, 0], linestyle='-', color='blue', alpha=0.5)
+
+# Highlight anomalies with red circles
+plt.scatter(np.where(y_pred == -1), X_pca[y_pred == -1, 0], c='red', marker='o', label='Anomaly')
+
+plt.title('Isolation Forest Anomaly Detection on Wine Dataset with Anomaly Scores')
+plt.xlabel('Index')
+plt.ylabel('Principal Component 2')
+plt.colorbar(label='Anomaly Score')
+plt.legend()
+plt.show()
+```
+The resulting plot offers a visual representation of anomalies detected by the Isolation Forest algorithm. Instances with higher anomaly scores, depicted in red, stand out as potential outliers. Adjusting the threshold for anomaly scores allows for fine-tuning the sensitivity of the outlier detection. In this exploration, we applied Isolation Forest to the Wine dataset, shedding light on potential outliers based on chemical attributes. The combination of dimensionality reduction, anomaly scoring, and visualization provides a comprehensive view of the algorithm's performance.
+
+# Local Outlier Factor (LOF) algorithm:
+Another popular method for anomaly detection is the Local Outlier Factor (LOF) algorithm. LOF assesses the local density deviation of data points, identifying those with significantly lower density as potential outliers. It's effective in scenarios where anomalies might not necessarily be distant from the majority but exhibit lower density.
+
+Understanding Local Outlier Factor (LOF): The LOF algorithm assigns an anomaly score to each data point based on the local density comparison with its neighbors. Points with lower density compared to their neighbors receive higher anomaly scores, marking them as potential outliers. 
+
+The following visualization is used to demonstrate this technique for detecting anomalies for one of the features among 13 features present in the wine dataset-
+```{python}
+from sklearn.datasets import load_wine
+from sklearn.neighbors import LocalOutlierFactor
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the wine dataset
+wine = load_wine()
+X = wine.data
+
+# Use Local Outlier Factor for anomaly detection
+model = LocalOutlierFactor(n_neighbors=20, contamination=0.05)
+predictions = model.fit_predict(X)
+
+# Visualize scatter plot for feature 2 and histogram for feature 3
+feature2_index = 2
+feature3_index = 3
+
+plt.figure(figsize=(12, 6))
+
+
+# Histogram for feature 3
+plt.subplot(1, 2, 2)
+plt.hist(X[predictions == 1, feature3_index], bins=30, color='green', alpha=0.5, label='Normal')
+plt.hist(X[predictions == -1, feature3_index], bins=30, color='red', alpha=0.5, label='Anomalies')
+plt.title(f'Histogram for Feature {wine.feature_names[feature3_index]}')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+
+References have been taken from various sources on the Internet.

@@ -1,0 +1,32 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/tbora98
+
+---
+
+About this blog
+---
+title: "Welcome To My Blog"
+author: "Trisha Bora"
+date: "2023-12-06"
+categories: [news]
+---
+
+This is my first time posting in a Quarto blog. 
+This has been created as the assignment of the course offered in Virginia Tech, Machine Learning II, CS 5805.
+ Welcome!
+
+I am Trisha Bora, a graduate student in Virginia tech blacsburg campus with my focus in Electrical Engineering. 
+
+Hope you like the blogs!
+
+
+
+
+

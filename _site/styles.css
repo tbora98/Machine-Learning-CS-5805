@@ -1,0 +1,66 @@
+/* css styles */
+/* Style the body */
+body {
+    background-color:#e6f7ff;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+/* header {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style the navigation bar */
+/* nav {
+    background-color: #333;
+    text-align: center;
+} */ */
+.categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* Display categories horizontally */
+    justify-content: center; /* Center the categories horizontally */
+}
+
+.categories li {
+    margin-right: 15px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #fff;
+}
+/* .categories{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap; /* Ensure categories don't wrap to the next line */
+    /* overflow-x: auto; /* Add horizontal scroll if categories overflow */
+    /* flex-direction: row;
+   
+    justify-content: center; /* Center the categories horizontally */
+    /* align-items: center; */
+} */ */ */
+
+/* .categories li {
+    margin-right: 15px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #fff;
+} */
+
+/* Style the main content */
+/* main {
+    padding: 20px;
+} */
+
