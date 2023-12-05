@@ -11,7 +11,7 @@ Clustering is a powerful technique that allows us to uncover hidden patterns and
 
 In this blog post, the fundamentals of clustering, the requirements for implementing machine learning code, and showcase a data visualization to better understand the concept behind clustering algorithms.
 
-Understanding Clustering:
+# Understanding Clustering:
 
 Clustering is a type of unsupervised learning where the goal is to group similar data points together. Unlike supervised learning, there are no predefined labels for the data, and the algorithm must identify patterns on its own. This makes clustering particularly useful for exploratory data analysis, customer segmentation, anomaly detection, and more.
 Requirements for Machine Learning Code:

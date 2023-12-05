@@ -10,10 +10,13 @@ image: "image.jpg"
 
 # Introduction: 
 In this blog, we will unravel the essentials of classification, the requirements for building machine learning code, and showcase the beauty of data visualization.
+
 # Understanding Classification:
- Classification is a type of supervised learning where the algorithm learns from labeled training data to categorize new, unseen data into predefined classes or categories. For instance teaching a computer to distinguish between spam and non-spam emails or identify the genre of a song based on its features.
- # Requirements for Machine Learning Code:
- Data Collection and Preprocessing: A dataset that represents the problem is needed to be solved has to be collected. Then the data needs to be cleaned and preprocess the data to handle missing values, outliers, and standardize features.
+Classification is a type of supervised learning where the algorithm learns from labeled training data to categorize new, unseen data into predefined classes or categories. For instance teaching a computer to distinguish between spam and non-spam emails or identify the genre of a song based on its features.
+
+# Requirements for Machine Learning Code:
+
+Data Collection and Preprocessing: A dataset that represents the problem is needed to be solved has to be collected. Then the data needs to be cleaned and preprocess the data to handle missing values, outliers, and standardize features.
 
 Splitting Data: The dataset is divided into training and testing sets. The training set is used to train the model, while the testing set evaluates its performance on unseen data.
 
@@ -32,7 +35,7 @@ Consider a binary classification problem where we aim to classify whether a stud
 In this example, we use a scatter plot to visualize the data points, with different colors representing pass and fail. Additionally, we visualize the confusion matrix to evaluate the model's performance.
 
 # The Wine Dataset:
- A Palette of Three Classes The Wine dataset serves as the canvas for our exploration. Comprising 13 features related to chemical analyses of wines grown in a specific Italian region. For the sake of visualization, we have chosen to focus on the first two features, standardizing them for optimal clarity.
+A Palette of Three Classes The Wine dataset serves as the canvas for our exploration. Comprising 13 features related to chemical analyses of wines grown in a specific Italian region. For the sake of visualization, we have chosen to focus on the first two features, standardizing them for optimal clarity.
 
 Data Preprocessing
 
